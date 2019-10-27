@@ -7,14 +7,14 @@ import java.util.Map;
 /**
  * Created by Kirill Zhitelev on 27.10.2019.
  */
-public final class LFUStrategy<K, V> implements EvictionStrategy<K, V> {
+final class LFUStrategy<K, V> implements EvictionStrategy<K, V> {
     private Map<K, Node<K, V>> cache;
     private Map<Integer, LinkedList<Node<K, V>>> frequencyList = new HashMap<>();
     private Map<K, Integer> counters = new HashMap<>();
     private int cacheCapacity;
     private int min = 0;
 
-    public LFUStrategy(Map<K, Node<K, V>> cache, int cacheCapacity) {
+    LFUStrategy(Map<K, Node<K, V>> cache, int cacheCapacity) {
         this.cache = cache;
         this.cacheCapacity = cacheCapacity;
         frequencyList.put(1, new LinkedList<>());

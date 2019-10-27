@@ -6,12 +6,12 @@ import java.util.Map;
 /**
  * Created by Kirill Zhitelev on 27.10.2019.
  */
-public final class LRUStrategy<K, V> implements EvictionStrategy<K, V> {
+final class LRUStrategy<K, V> implements EvictionStrategy<K, V> {
     private LinkedList<Node<K, V>> cacheElementsList = new LinkedList<>();
     private Map<K, Node<K, V>> cache;
     private int cacheCapacity;
 
-    public LRUStrategy(Map<K, Node<K, V>> cache, int cacheCapacity) {
+    LRUStrategy(Map<K, Node<K, V>> cache, int cacheCapacity) {
         this.cache = cache;
         this.cacheCapacity = cacheCapacity;
     }
