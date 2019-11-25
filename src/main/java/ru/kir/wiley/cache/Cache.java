@@ -19,4 +19,6 @@ public interface Cache<K, V> {
     boolean containsValue(EvictionStrategy.Node<K, V> value);
 
     boolean containsKey(K key);
+
+    void test();
 }
